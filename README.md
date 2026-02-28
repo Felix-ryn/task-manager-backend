@@ -151,6 +151,4 @@ DB_PORT=5432
 DB_NAME=task_manager
 DB_USER=your_username
 DB_PASSWORD=your_password
-JWT_SECRET=your_secret_key
-JWT_EXPIRES_IN=7d
 ```
