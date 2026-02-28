@@ -7,21 +7,21 @@ const { sequelize, Task, Tag } = require(
 );
 
 async function seed() {
-  console.log('⏳ Connecting to database...');
+  console.log(' Connecting to database...');
   await sequelize.authenticate();
-  console.log('✅ Database connected');
+  console.log(' Database connected');
 
-  console.log('⏳ Syncing database...');
-  await sequelize.sync({ force: true }); // HATI-HATI: reset tabel
-  console.log('✅ Database synced');
+  console.log(' Syncing database...');
+  await sequelize.sync({ force: true }); 
+  console.log(' Database synced');
 
-  // === TAGS ===
+  //  TAGS 
   const tagNames = ['backend', 'study', 'urgent', 'personal'];
   const tags = await Promise.all(
     tagNames.map(name => Tag.create({ name }))
   );
 
-  // === TASK 1 ===
+  //  TASK 1 
   const t1 = await Task.create({
     title: 'Belajar Express',
     description: 'Belajar membuat REST API dengan Express',
@@ -31,7 +31,7 @@ async function seed() {
   });
   await t1.setTags([tags[0], tags[1]]);
 
-  // === TASK 2 ===
+  //  TASK 2 
   const t2 = await Task.create({
     title: 'Tugas Matematika',
     description: 'Selesaikan soal UTS',
@@ -41,7 +41,7 @@ async function seed() {
   });
   await t2.setTags([tags[2]]);
 
-  // === TASK 3 ===
+  //  TASK 3 
   const t3 = await Task.create({
     title: 'Beli bahan makanan',
     description: 'Beras, telur, sayur',
@@ -51,11 +51,11 @@ async function seed() {
   });
   await t3.setTags([tags[3]]);
 
-  console.log('🎉 Seed database BERHASIL');
+  console.log(' Seed database BERHASIL');
   process.exit(0);
 }
 
 seed().catch(err => {
-  console.error('❌ Seed gagal:', err);
+  console.error(' Seed gagal:', err);
   process.exit(1);
 });

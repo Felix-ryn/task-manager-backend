@@ -10,7 +10,7 @@ router.get('/:id', taskController.getTaskById);
 router.put('/:id', taskController.updateTask);
 router.delete('/:id', taskController.deleteTask);
 
-// extra: add tags (alternative endpoint)
+// extra: add tags 
 router.post('/:id/tags', taskController.addTagsToTask);
 
 module.exports = router;
