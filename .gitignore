@@ -1,0 +1,14 @@
+# Dependency folder (ukurannya sangat besar dan bisa di-install ulang)
+node_modules/
+
+# File konfigurasi rahasia (berisi database URL, API Key, dll)
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Folder sistem operasi
+.DS_Store
+Thumbs.db
